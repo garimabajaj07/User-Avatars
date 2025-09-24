@@ -42,17 +42,21 @@ h1 {
     top: -2px;
     right: -2px;
     color: black;
-    font-size: 12px;
-    font-weight: bold;
+    font-size: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     background-color: #f1ecec;
 }
+.cross:hover{
+    background-color: black;
+    color: white;
+}
 
 .add-user-mainDiv {
     display: flex;
+    flex-direction:row-reverse;
     gap: 10px;
 
 }
@@ -63,7 +67,7 @@ h1 {
     align-items: center;
 }
 
-.popup-box {
+.popup-box, .remove-user {
     height: 150px;
     width: 250px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -80,7 +84,19 @@ h4 {
 
 
 }
+.cancelUser{
+    background-color: red;
+    color: white;
+}
+.confirmUser, .confirmDelete{
+        color: white;
+background-color: green;
+}
 
 button {
     margin-top: 20px;
+    padding: 8px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
 }
