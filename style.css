@@ -1,0 +1,86 @@
+body {
+    height: 100vh;
+    background-color: #19183B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 300px;
+    width: 700px;
+    background-color:#E8DFCA;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+h1 {
+    text-align: center;
+}
+
+.plus {
+    margin-top: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 24px;
+
+}
+
+.cross {
+    height: 15px;
+    width: 15px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f1ecec;
+}
+
+.add-user-mainDiv {
+    display: flex;
+    gap: 10px;
+
+}
+
+.add-initials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-box {
+    height: 150px;
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+    display: none;
+    padding: 8px;
+    background-color: white;
+
+}
+
+h4 {
+    padding: 4px;
+    background-color: whitesmoke;
+
+
+}
+
+button {
+    margin-top: 20px;
+}
