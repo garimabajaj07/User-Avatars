@@ -9,7 +9,7 @@ const removeUser = document.querySelector('.remove-user')
 const confirmDelete = document.querySelector('.confirmDelete')
 let darkColors = ["#1B3C53", "#37353E", "#0D1164", "#640D5F", "#18230F", "#9e0404ff"]
 let lightColors = ["#ccd3c0ff", "#D2C1B6", "#EF88AD", "#EBD3F8", "#edb9c2ff", "#fff9"]
-
+let currentCircleDelted = null //to store the particular circle to delte
 //click on plus to add new user details
 addUser.addEventListener('click', addNewUser)
 function addNewUser() {
@@ -28,7 +28,7 @@ function confirmNewUser() {
     //to create user circle
     let newDiv = document.createElement('div')
     newDiv.classList.add('plus')
-    newDiv.id = Date.now() //giving unique id to every circleDiv
+    newDiv.id = 'user-' + Date.now() //giving unique id to every circleDiv
     newDiv.style.position = 'relative'
 
     //cross to remove circle
@@ -38,10 +38,15 @@ function confirmNewUser() {
 
     //getting the initial
     let initial = document.createElement('span');
-    let nameInputValue = nameInput.value
+    let nameInputValue = nameInput.value.trim()
+    if (nameInputValue === "") {
+        alert("Please enter a name")
+        return
+    }
     for (let i = 0; i < nameInputValue.length; i++) {
         initial.textContent = nameInputValue[0]
     }
+
     newDiv.appendChild(crossDiv)
     newDiv.appendChild(initial)
     userDivs.append(newDiv)
@@ -71,11 +76,19 @@ function confirmNewUser() {
         if (removeUser.style.display == 'block') {
             userDivs.style.display = 'none'
         }
+        currentDeleteCircle = newDiv // remember which one
+
     }
 
 
     confirmDelete.addEventListener('click', removeTheUser)
     function removeTheUser() {
+        if (currentDeleteCircle != null) {
+            currentDeleteCircle.remove()
+            currentDeleteCircle = null
+        }
+        removeUser.style.display = 'none'
+        userDivs.style.display = 'flex'
 
     }
 
